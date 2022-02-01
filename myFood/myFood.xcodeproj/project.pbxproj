@@ -14,6 +14,7 @@
 		B19AF49027A8A2F5004FC0ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B19AF48E27A8A2F5004FC0ED /* LaunchScreen.storyboard */; };
 		B19AF49B27A8A2F5004FC0ED /* myFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF49A27A8A2F5004FC0ED /* myFoodTests.swift */; };
 		B19AF4A627A8A2F5004FC0ED /* myFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF4A527A8A2F5004FC0ED /* myFoodUITests.swift */; };
+		B19AF4CC27A8AB18004FC0ED /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF4CB27A8AB18004FC0ED /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B19AF4A127A8A2F5004FC0ED /* myFoodUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myFoodUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B19AF4A527A8A2F5004FC0ED /* myFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFoodUITests.swift; sourceTree = "<group>"; };
 		B19AF4A727A8A2F5004FC0ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B19AF4CB27A8AB18004FC0ED /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				B19AF48C27A8A2F5004FC0ED /* Assets.xcassets */,
 				B19AF48327A8A2F4004FC0ED /* AppDelegate.swift */,
 				B19AF48527A8A2F4004FC0ED /* SceneDelegate.swift */,
+				B19AF4CB27A8AB18004FC0ED /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				B19AF48827A8A2F4004FC0ED /* HomeViewController.swift in Sources */,
 				B19AF48427A8A2F4004FC0ED /* AppDelegate.swift in Sources */,
 				B19AF48627A8A2F4004FC0ED /* SceneDelegate.swift in Sources */,
+				B19AF4CC27A8AB18004FC0ED /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
