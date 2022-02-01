@@ -17,7 +17,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         let vc = HomeViewController()
-        window.rootViewController = vc
+        vc.navigationItem.largeTitleDisplayMode = .automatic
+//        vc.title = "myFood."
+        let navVC = UINavigationController(rootViewController: vc)
+        //navVC.navigationBar.prefersLargeTitles = true
+        window.rootViewController = navVC
         window.makeKeyAndVisible()
         self.window = window
     }
