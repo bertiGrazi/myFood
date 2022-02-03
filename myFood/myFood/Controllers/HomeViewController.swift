@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
         setupNavigation()
         setupView()
         setupContrains()
-//        bindUI()
+        bindUI()
     }
     
     fileprivate func setupView() {
@@ -74,6 +74,13 @@ class HomeViewController: UIViewController {
                                      y: UIScreen.main.bounds.width <= 375 ? view.top+10 : view.top+20,
                                      width: UIScreen.main.bounds.width <= 375 ? 70 : 100,
                                      height: UIScreen.main.bounds.width <= 375 ? 40 : 50
+        )
+    }
+    
+    fileprivate func bindUI() {
+        editionButton.addTarget(self,
+                                action: #selector(didTapButtonEdition),
+                                for: .touchUpInside
         )
     }
     
@@ -106,5 +113,10 @@ class HomeViewController: UIViewController {
         search.searchBar.setImage(UIImage(named: "magnifyingglass")?.withTintColor(UIColor.systemGray), for: .search, state: .normal)
         
         self.navigationItem.searchController = search
+    }
+    
+    @objc func didTapButtonEdition() {
+        let editAdress = EditAdressViewController()
+        self.navigationController?.pushViewController(editAdress, animated: true)
     }
 }
