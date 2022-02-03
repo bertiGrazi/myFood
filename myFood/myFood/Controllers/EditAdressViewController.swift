@@ -13,6 +13,6 @@ class EditAdressViewController: UIViewController {
         super.viewDidLoad()
         
         title = "Edit Adress"
-        view.backgroundColor = .link
+        view.backgroundColor = .white
     }
 }
