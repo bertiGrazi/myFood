@@ -19,10 +19,10 @@ class CategoryFoodCollectionViewCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     let categoryImage: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
-        imageView.image = UIImage(named: "category_pasta")
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 12
         imageView.layer.shadowRadius = 5

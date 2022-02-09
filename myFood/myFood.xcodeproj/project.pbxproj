@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B105B75027ACA09000CA0398 /* EditAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B105B74F27ACA09000CA0398 /* EditAdressViewController.swift */; };
+		B14037B627B43C16009C6DA7 /* RestaurantsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14037B527B43C16009C6DA7 /* RestaurantsListTableViewCell.swift */; };
+		B14037BB27B43CEA009C6DA7 /* RestaurantsListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14037BA27B43CEA009C6DA7 /* RestaurantsListDataSource.swift */; };
+		B14037C127B43F0C009C6DA7 /* RestaurantsListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14037C027B43F0C009C6DA7 /* RestaurantsListProtocol.swift */; };
+		B14037C627B43F18009C6DA7 /* RestaurantsListBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14037C527B43F18009C6DA7 /* RestaurantsListBusinessModel.swift */; };
+		B14037CB27B445AC009C6DA7 /* RestaurantListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14037CA27B445AC009C6DA7 /* RestaurantListViewModel.swift */; };
 		B18E0DF227B1D80500B93B10 /* CategoryFoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E0DF127B1D80500B93B10 /* CategoryFoodCollectionViewCell.swift */; };
 		B18E0DFA27B1DA1900B93B10 /* CategoryListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E0DF927B1DA1900B93B10 /* CategoryListDataSource.swift */; };
 		B19AF48427A8A2F4004FC0ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF48327A8A2F4004FC0ED /* AppDelegate.swift */; };
@@ -42,6 +47,11 @@
 
 /* Begin PBXFileReference section */
 		B105B74F27ACA09000CA0398 /* EditAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAdressViewController.swift; sourceTree = "<group>"; };
+		B14037B527B43C16009C6DA7 /* RestaurantsListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListTableViewCell.swift; sourceTree = "<group>"; };
+		B14037BA27B43CEA009C6DA7 /* RestaurantsListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListDataSource.swift; sourceTree = "<group>"; };
+		B14037C027B43F0C009C6DA7 /* RestaurantsListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListProtocol.swift; sourceTree = "<group>"; };
+		B14037C527B43F18009C6DA7 /* RestaurantsListBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListBusinessModel.swift; sourceTree = "<group>"; };
+		B14037CA27B445AC009C6DA7 /* RestaurantListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewModel.swift; sourceTree = "<group>"; };
 		B18E0DF127B1D80500B93B10 /* CategoryFoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodCollectionViewCell.swift; sourceTree = "<group>"; };
 		B18E0DF927B1DA1900B93B10 /* CategoryListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListDataSource.swift; sourceTree = "<group>"; };
 		B19AF48027A8A2F4004FC0ED /* myFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,10 +98,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B14037BF27B43EF2009C6DA7 /* RestaurantsList */ = {
+			isa = PBXGroup;
+			children = (
+				B14037C027B43F0C009C6DA7 /* RestaurantsListProtocol.swift */,
+				B14037C527B43F18009C6DA7 /* RestaurantsListBusinessModel.swift */,
+			);
+			path = RestaurantsList;
+			sourceTree = "<group>";
+		};
 		B18E0DF027B1D7D100B93B10 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				B18E0DF127B1D80500B93B10 /* CategoryFoodCollectionViewCell.swift */,
+				B14037B527B43C16009C6DA7 /* RestaurantsListTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -181,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				B18E0DF927B1DA1900B93B10 /* CategoryListDataSource.swift */,
+				B14037BA27B43CEA009C6DA7 /* RestaurantsListDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -189,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				B1D3BE0027B33368006543E5 /* CategoryListViewModel.swift */,
+				B14037CA27B445AC009C6DA7 /* RestaurantListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -196,6 +218,7 @@
 		B19AF4C727A8A437004FC0ED /* BusinessModel */ = {
 			isa = PBXGroup;
 			children = (
+				B14037BF27B43EF2009C6DA7 /* RestaurantsList */,
 				B1D3BDF727B3326F006543E5 /* CategoryList */,
 			);
 			path = BusinessModel;
@@ -339,14 +362,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B14037C627B43F18009C6DA7 /* RestaurantsListBusinessModel.swift in Sources */,
+				B14037CB27B445AC009C6DA7 /* RestaurantListViewModel.swift in Sources */,
 				B19AF48827A8A2F4004FC0ED /* HomeViewController.swift in Sources */,
 				B1D3BDFC27B332BF006543E5 /* CategoryListBusinessModel.swift in Sources */,
 				B1D3BDF327B33259006543E5 /* CategoryListProtocol.swift in Sources */,
 				B18E0DFA27B1DA1900B93B10 /* CategoryListDataSource.swift in Sources */,
 				B1D3BE0127B33368006543E5 /* CategoryListViewModel.swift in Sources */,
+				B14037C127B43F0C009C6DA7 /* RestaurantsListProtocol.swift in Sources */,
+				B14037B627B43C16009C6DA7 /* RestaurantsListTableViewCell.swift in Sources */,
 				B19AF48427A8A2F4004FC0ED /* AppDelegate.swift in Sources */,
 				B19AF48627A8A2F4004FC0ED /* SceneDelegate.swift in Sources */,
 				B105B75027ACA09000CA0398 /* EditAdressViewController.swift in Sources */,
+				B14037BB27B43CEA009C6DA7 /* RestaurantsListDataSource.swift in Sources */,
 				B18E0DF227B1D80500B93B10 /* CategoryFoodCollectionViewCell.swift in Sources */,
 				B19AF4CC27A8AB18004FC0ED /* Extensions.swift in Sources */,
 			);

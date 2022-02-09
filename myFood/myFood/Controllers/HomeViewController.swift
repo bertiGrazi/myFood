@@ -9,7 +9,9 @@ import UIKit
 
 class HomeViewController: UIViewController {
     //MARK: - Variable
-    var viewModel =  CategoryListViewModel()
+    var viewModelCategory =  CategoryListViewModel()
+    var viewModelRestarant = RestaurantListViewModel()
+    let cellHeight: CGFloat = 70
     
     //MARK: - View
     let scrollView: UIScrollView = {
@@ -23,7 +25,6 @@ class HomeViewController: UIViewController {
         let searchBar = UISearchBar()
         searchBar.searchBarStyle = UISearchBar.Style.default
         searchBar.placeholder = "Nome do Restaurante"
-        
         return searchBar
     }()
     
@@ -48,6 +49,13 @@ class HomeViewController: UIViewController {
         return collectionView
     }()
     
+    let tableView: UITableView = {
+        let tableview = UITableView()
+        tableview.register(RestaurantsListTableViewCell.self, forCellReuseIdentifier: RestaurantsListTableViewCell.reuseIdentifier)
+        tableview.translatesAutoresizingMaskIntoConstraints = false
+        return tableview
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGray6
@@ -58,12 +66,16 @@ class HomeViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        tableView.dataSource = self
+        tableView.delegate = self
     }
     
     fileprivate func setupView() {
         view.addSubview(scrollView)
         scrollView.addSubview(labelAdress)
         scrollView.addSubview(collectionView)
+        scrollView.addSubview(tableView)
     }
     
     fileprivate func setupContrains() {
@@ -81,6 +93,14 @@ class HomeViewController: UIViewController {
             collectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -5),
             collectionView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             collectionView.heightAnchor.constraint(equalToConstant: 100)
+        ])
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 20),
+            tableView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
+            tableView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -5),
+            tableView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: -10),
+            tableView.heightAnchor.constraint(equalToConstant: 1000)
         ])
     }
     
@@ -125,18 +145,20 @@ class HomeViewController: UIViewController {
 }
 //MARK: - UICollectionView: UICollectionViewDelegate
 extension HomeViewController: UICollectionViewDelegate {
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return cellHeight
+    }
 }
 
 //MARK: - UICollectionView: UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.fetchCategoryList().count
+        return viewModelCategory.fetchCategoryList().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryFoodCollectionViewCell.identifier, for: indexPath) as! CategoryFoodCollectionViewCell
-        let category = viewModel.fetchCategoryList()[indexPath.row]
+        let category = viewModelCategory.fetchCategoryList()[indexPath.row]
         cell.configure(for: category)
 
         return cell
@@ -147,5 +169,21 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
 func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 80, height: 100)
+    }
+}
+//MARK: - UITableView: UITableViewDelegate
+extension HomeViewController: UITableViewDelegate {
+    
+}
+//MARK: - UITableView: UITableViewDataSource
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModelRestarant.fetchRestaurantList().count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantsListTableViewCell.reuseIdentifier, for: indexPath) as? RestaurantsListTableViewCell else { return UITableViewCell() }
+        cell.config(for: viewModelRestarant.fetchRestaurantList()[indexPath.row])
+        return cell
     }
 }
