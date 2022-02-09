@@ -14,8 +14,8 @@ class CategoryFoodCollectionViewCell: UICollectionViewCell {
     //MARK: - View
     let viewCategory: UIView = {
         let view = UIView()
-        view.backgroundColor = .link
-        view.layer.cornerRadius = 10
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 4
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -33,15 +33,17 @@ class CategoryFoodCollectionViewCell: UICollectionViewCell {
     let labelCategory: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: UIScreen.main.bounds.width <= 375 ? 10 : 10)
+        label.font = UIFont.boldSystemFont(ofSize: UIScreen.main.bounds.width <= 375 ? 15 : 15)
         label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.addSubview(categoryImage)
-        contentView.addSubview(labelCategory)
+        contentView.addSubview(viewCategory)
+        viewCategory.addSubview(categoryImage)
+        viewCategory.addSubview(labelCategory)
     }
     
     required init?(coder: NSCoder) {
@@ -52,19 +54,29 @@ class CategoryFoodCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
         NSLayoutConstraint.activate([
-            categoryImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
-            categoryImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 6),
-            categoryImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 10),
+            viewCategory.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            viewCategory.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            viewCategory.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 10),
+            viewCategory.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0),
+            viewCategory.widthAnchor.constraint(equalToConstant: 100),
+            viewCategory.heightAnchor.constraint(equalToConstant: 150)
+        ])
+        
+        NSLayoutConstraint.activate([
+            categoryImage.topAnchor.constraint(equalTo: viewCategory.topAnchor, constant: 12),
+            categoryImage.leadingAnchor.constraint(equalTo: viewCategory.leadingAnchor, constant: 12),
+            viewCategory.trailingAnchor.constraint(equalTo: viewCategory.trailingAnchor, constant: 12),
             categoryImage.widthAnchor.constraint(equalToConstant: 50),
             categoryImage.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         NSLayoutConstraint.activate([
-            labelCategory.topAnchor.constraint(equalTo: categoryImage.bottomAnchor, constant: 5)
+            labelCategory.centerXAnchor.constraint(equalTo: viewCategory.centerXAnchor, constant: 0),
+            labelCategory.topAnchor.constraint(equalTo: categoryImage.bottomAnchor, constant: 12)
         ])
     }
     
-    func configure(for listProduct: CategoryList) {
+    func configure(for listProduct: CategoryListDataSource) {
         categoryImage.image = listProduct.imageCategory.image
         labelCategory.text = listProduct.categoryProduct
     }
