@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B105B75027ACA09000CA0398 /* EditAdressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B105B74F27ACA09000CA0398 /* EditAdressViewController.swift */; };
 		B18E0DF227B1D80500B93B10 /* CategoryFoodCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E0DF127B1D80500B93B10 /* CategoryFoodCollectionViewCell.swift */; };
-		B18E0DFA27B1DA1900B93B10 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E0DF927B1DA1900B93B10 /* CategoryList.swift */; };
+		B18E0DFA27B1DA1900B93B10 /* CategoryListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E0DF927B1DA1900B93B10 /* CategoryListDataSource.swift */; };
 		B19AF48427A8A2F4004FC0ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF48327A8A2F4004FC0ED /* AppDelegate.swift */; };
 		B19AF48627A8A2F4004FC0ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF48527A8A2F4004FC0ED /* SceneDelegate.swift */; };
 		B19AF48827A8A2F4004FC0ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF48727A8A2F4004FC0ED /* HomeViewController.swift */; };
@@ -18,6 +18,9 @@
 		B19AF49B27A8A2F5004FC0ED /* myFoodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF49A27A8A2F5004FC0ED /* myFoodTests.swift */; };
 		B19AF4A627A8A2F5004FC0ED /* myFoodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF4A527A8A2F5004FC0ED /* myFoodUITests.swift */; };
 		B19AF4CC27A8AB18004FC0ED /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19AF4CB27A8AB18004FC0ED /* Extensions.swift */; };
+		B1D3BDF327B33259006543E5 /* CategoryListProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3BDF227B33259006543E5 /* CategoryListProtocol.swift */; };
+		B1D3BDFC27B332BF006543E5 /* CategoryListBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3BDFB27B332BF006543E5 /* CategoryListBusinessModel.swift */; };
+		B1D3BE0127B33368006543E5 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D3BE0027B33368006543E5 /* CategoryListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +43,7 @@
 /* Begin PBXFileReference section */
 		B105B74F27ACA09000CA0398 /* EditAdressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAdressViewController.swift; sourceTree = "<group>"; };
 		B18E0DF127B1D80500B93B10 /* CategoryFoodCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFoodCollectionViewCell.swift; sourceTree = "<group>"; };
-		B18E0DF927B1DA1900B93B10 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
+		B18E0DF927B1DA1900B93B10 /* CategoryListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListDataSource.swift; sourceTree = "<group>"; };
 		B19AF48027A8A2F4004FC0ED /* myFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B19AF48327A8A2F4004FC0ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B19AF48527A8A2F4004FC0ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		B19AF4A527A8A2F5004FC0ED /* myFoodUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myFoodUITests.swift; sourceTree = "<group>"; };
 		B19AF4A727A8A2F5004FC0ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B19AF4CB27A8AB18004FC0ED /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B1D3BDF227B33259006543E5 /* CategoryListProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListProtocol.swift; sourceTree = "<group>"; };
+		B1D3BDFB27B332BF006543E5 /* CategoryListBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListBusinessModel.swift; sourceTree = "<group>"; };
+		B1D3BE0027B33368006543E5 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,7 +180,7 @@
 		B19AF4C527A8A424004FC0ED /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B18E0DF927B1DA1900B93B10 /* CategoryList.swift */,
+				B18E0DF927B1DA1900B93B10 /* CategoryListDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 		B19AF4C627A8A42F004FC0ED /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B1D3BE0027B33368006543E5 /* CategoryListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -189,8 +196,18 @@
 		B19AF4C727A8A437004FC0ED /* BusinessModel */ = {
 			isa = PBXGroup;
 			children = (
+				B1D3BDF727B3326F006543E5 /* CategoryList */,
 			);
 			path = BusinessModel;
+			sourceTree = "<group>";
+		};
+		B1D3BDF727B3326F006543E5 /* CategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				B1D3BDF227B33259006543E5 /* CategoryListProtocol.swift */,
+				B1D3BDFB27B332BF006543E5 /* CategoryListBusinessModel.swift */,
+			);
+			path = CategoryList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +340,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B19AF48827A8A2F4004FC0ED /* HomeViewController.swift in Sources */,
-				B18E0DFA27B1DA1900B93B10 /* CategoryList.swift in Sources */,
+				B1D3BDFC27B332BF006543E5 /* CategoryListBusinessModel.swift in Sources */,
+				B1D3BDF327B33259006543E5 /* CategoryListProtocol.swift in Sources */,
+				B18E0DFA27B1DA1900B93B10 /* CategoryListDataSource.swift in Sources */,
+				B1D3BE0127B33368006543E5 /* CategoryListViewModel.swift in Sources */,
 				B19AF48427A8A2F4004FC0ED /* AppDelegate.swift in Sources */,
 				B19AF48627A8A2F4004FC0ED /* SceneDelegate.swift in Sources */,
 				B105B75027ACA09000CA0398 /* EditAdressViewController.swift in Sources */,

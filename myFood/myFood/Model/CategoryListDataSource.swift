@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class CategoryList {
+class CategoryListDataSource {
     var imageCategory = UIImageView()
     var categoryProduct: String
     

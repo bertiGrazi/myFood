@@ -9,14 +9,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
     //MARK: - Variable
-    var categoryList: [CategoryList]!
-    let cellHeight: CGFloat = 130
+    var viewModel =  CategoryListViewModel()
     
     //MARK: - View
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.clipsToBounds = true
-        scrollView.backgroundColor = .white
+        scrollView.backgroundColor = .systemGray6
         return scrollView
     }()
     
@@ -34,26 +33,15 @@ class HomeViewController: UIViewController {
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: UIScreen.main.bounds.width <= 375 ? 14 : 16)
         label.textAlignment = .left
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    let editionButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Editar", for: .normal)
-        button.layer.masksToBounds = true
-        button.titleLabel?.font = .systemFont(ofSize: UIScreen.main.bounds.width <= 375 ? 14 : 18, weight: .bold)
-        button.setTitleColor(.link, for: .normal)
-        button.layer.borderColor = CGColor(red: 0.0, green: 0.0, blue: 0.255, alpha: 100)
-        button.layer.borderWidth = 1.0
-        button.layer.cornerRadius = 8
-        return button
     }()
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
             let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.backgroundColor = .systemBackground
+        collectionView.backgroundColor = .systemGray6
             collectionView.register(CategoryFoodCollectionViewCell.self,
                                     forCellWithReuseIdentifier: CategoryFoodCollectionViewCell.identifier)
             collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,28 +58,11 @@ class HomeViewController: UIViewController {
         
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        let list = CategoryList(imageCategory: UIImageView(image: UIImage(named: "category_pasta")), categoryProduct: "Massa")
-        let list2 = CategoryList(imageCategory: UIImageView(image: UIImage(named: "category_pasta")), categoryProduct: "Massa")
-        let list3 = CategoryList(imageCategory: UIImageView(image: UIImage(named: "category_pasta")), categoryProduct: "Massa")
-        let list4 = CategoryList(imageCategory: UIImageView(image: UIImage(named: "category_pasta")), categoryProduct: "Massa")
-        let list5 = CategoryList(imageCategory: UIImageView(image: UIImage(named: "category_pasta")), categoryProduct: "Massa")
-        let list6 = CategoryList(imageCategory: UIImageView(image: UIImage(named: "category_pasta")), categoryProduct: "Massa")
-        let list7 = CategoryList(imageCategory: UIImageView(image: UIImage(named: "category_pasta")), categoryProduct: "Massa")
-//        let list8 = CategoryList(categoryProduct: "Massa")
-//        let list9 = CategoryList(categoryProduct: "Massa")
-//        let list10 = CategoryList(categoryProduct: "Massa")
-//        let list11 = CategoryList(categoryProduct: "Massa")
-//        let list12 = CategoryList(categoryProduct: "Massa")
-
-        //categoryList = [list, list2, list3, list4, list5, list6, list7, list8, list9, list10, list11, list2]
-        categoryList = [list, list2, list3, list4, list5, list6, list7]
     }
     
     fileprivate func setupView() {
         view.addSubview(scrollView)
         scrollView.addSubview(labelAdress)
-        scrollView.addSubview(editionButton)
         scrollView.addSubview(collectionView)
     }
     
@@ -99,31 +70,21 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         scrollView.frame = view.bounds
         
-        labelAdress.frame = CGRect(x: UIScreen.main.bounds.width <= 375 ? scrollView.left+10 : scrollView.left+20,
-                                   y: UIScreen.main.bounds.width <= 375 ? scrollView.top+5 : scrollView.top+20,
-                                   width: view.width+20,
-                                   height: 50
-        )
-        
-        editionButton.frame = CGRect(x: UIScreen.main.bounds.width <= 375 ? labelAdress.right-110 : labelAdress.right-180,
-                                     y: UIScreen.main.bounds.width <= 375 ? scrollView.top+10 : scrollView.top+20,
-                                     width: UIScreen.main.bounds.width <= 375 ? 70 : 100,
-                                     height: UIScreen.main.bounds.width <= 375 ? 40 : 50
-        )
+        NSLayoutConstraint.activate([
+            labelAdress.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 20),
+            labelAdress.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 10)
+        ])
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: labelAdress.bottomAnchor, constant: 0),
-            collectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 3),
+            collectionView.topAnchor.constraint(equalTo: labelAdress.bottomAnchor, constant: 20),
+            collectionView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 5),
+            collectionView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: -5),
             collectionView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             collectionView.heightAnchor.constraint(equalToConstant: 100)
         ])
     }
     
     fileprivate func bindUI() {
-        editionButton.addTarget(self,
-                                action: #selector(didTapButtonEdition),
-                                for: .touchUpInside
-        )
     }
     
     fileprivate func setupNavigation() {
@@ -139,7 +100,7 @@ class HomeViewController: UIViewController {
         app.backgroundColor = .clear
         app.configureWithOpaqueBackground()
         app.titleTextAttributes = [.foregroundColor: UIColor.systemPink]
-        app.largeTitleTextAttributes = [.foregroundColor: UIColor.systemPink]
+        app.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
         app.backgroundColor = .systemGroupedBackground
         
         self.navigationController?.navigationBar.scrollEdgeAppearance = app
@@ -170,14 +131,21 @@ extension HomeViewController: UICollectionViewDelegate {
 //MARK: - UICollectionView: UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categoryList.count
+        return viewModel.fetchCategoryList().count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryFoodCollectionViewCell.identifier, for: indexPath) as! CategoryFoodCollectionViewCell
-        let category = categoryList[indexPath.row]
+        let category = viewModel.fetchCategoryList()[indexPath.row]
         cell.configure(for: category)
 
         return cell
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 80, height: 100)
     }
 }
