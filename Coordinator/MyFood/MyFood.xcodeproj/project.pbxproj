@@ -10,6 +10,7 @@
 		B113D98427B58D8400102B99 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B113D98327B58D8400102B99 /* Coordinator.swift */; };
 		B113D98927B58E4000102B99 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B113D98827B58E4000102B99 /* AppCoordinator.swift */; };
 		B113D98E27B58ECF00102B99 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B113D98D27B58ECF00102B99 /* HomeCoordinator.swift */; };
+		B113D99B27B5962900102B99 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B113D99A27B5962900102B99 /* HomeView.swift */; };
 		B1F6983A27B58C070034F007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F6983927B58C070034F007 /* AppDelegate.swift */; };
 		B1F6983C27B58C070034F007 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F6983B27B58C070034F007 /* SceneDelegate.swift */; };
 		B1F6983E27B58C070034F007 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F6983D27B58C070034F007 /* HomeViewController.swift */; };
@@ -39,6 +40,7 @@
 		B113D98327B58D8400102B99 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B113D98827B58E4000102B99 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B113D98D27B58ECF00102B99 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		B113D99A27B5962900102B99 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		B1F6983627B58C070034F007 /* MyFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1F6983927B58C070034F007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1F6983B27B58C070034F007 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,15 @@
 				B1F6983B27B58C070034F007 /* SceneDelegate.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		B113D99627B593BE00102B99 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B1F6983D27B58C070034F007 /* HomeViewController.swift */,
+				B113D99A27B5962900102B99 /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		B1F6982D27B58C070034F007 = {
@@ -148,7 +159,7 @@
 		B1F6987027B58C570034F007 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				B1F6983D27B58C070034F007 /* HomeViewController.swift */,
+				B113D99627B593BE00102B99 /* Home */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -292,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B113D98427B58D8400102B99 /* Coordinator.swift in Sources */,
+				B113D99B27B5962900102B99 /* HomeView.swift in Sources */,
 				B1F6983E27B58C070034F007 /* HomeViewController.swift in Sources */,
 				B113D98927B58E4000102B99 /* AppCoordinator.swift in Sources */,
 				B1F6983A27B58C070034F007 /* AppDelegate.swift in Sources */,
