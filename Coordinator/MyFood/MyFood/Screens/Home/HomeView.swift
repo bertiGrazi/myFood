@@ -22,9 +22,19 @@ class HomeView: UIView {
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
         stackView.spacing = 0
-        stackView.backgroundColor = .systemGray4
+        stackView.backgroundColor = .white
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
+    }()
+    
+    let labelAdress: UILabel = {
+        let label = UILabel()
+        label.text = "Rua Cicero Pompeio de Toledo, 1"
+        label.textAlignment = .left
+        label.font = UIFont(name: "Arial", size: 14)
+        label.tintColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
     init() {
@@ -40,6 +50,7 @@ class HomeView: UIView {
     fileprivate func setupViews() {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
+        stackView.addSubview(labelAdress)
     }
     
     fileprivate func configureConstraints() {
@@ -55,6 +66,9 @@ class HomeView: UIView {
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
+            
+            labelAdress.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 20),
+            labelAdress.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
         ])
     }
 }
