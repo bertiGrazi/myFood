@@ -22,7 +22,7 @@ class HomeView: UIView {
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
         stackView.spacing = 0
-        stackView.backgroundColor = .link
+        stackView.backgroundColor = .systemGray4
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
