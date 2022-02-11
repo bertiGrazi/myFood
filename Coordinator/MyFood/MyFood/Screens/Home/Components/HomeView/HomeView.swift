@@ -22,7 +22,7 @@ class HomeView: UIView {
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
         stackView.spacing = 0
-        stackView.backgroundColor = .white
+        stackView.backgroundColor = .systemGray5
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -31,6 +31,12 @@ class HomeView: UIView {
         let promoListView = PromoListView()
         promoListView.translatesAutoresizingMaskIntoConstraints = false
         return promoListView
+    }()
+    
+    let categoryListView: CategoryListView = {
+        let categoryListView = CategoryListView()
+        categoryListView.translatesAutoresizingMaskIntoConstraints = false
+        return categoryListView
     }()
     
     init() {
@@ -47,6 +53,7 @@ class HomeView: UIView {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(promoListView)
+        stackView.addArrangedSubview(categoryListView)
     }
     
     func configureConstraints() {
@@ -61,7 +68,6 @@ class HomeView: UIView {
             stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
-            stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
         ])
     }
 }

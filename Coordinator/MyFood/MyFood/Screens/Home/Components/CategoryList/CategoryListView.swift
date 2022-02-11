@@ -21,6 +21,7 @@ class CategoryListView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
+        stackView.spacing = 9
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -29,6 +30,7 @@ class CategoryListView: UIView {
         super.init(frame: .zero)
         setupViews()
         configureConstraints()
+        updatePromoList()
     }
     
     required init?(coder: NSCoder) {
@@ -39,12 +41,18 @@ class CategoryListView: UIView {
         return CGSize(width: UIView.noIntrinsicMetric, height: 122)
     }
     
-    func setupViews() {
+    fileprivate func updatePromoList() {
+        for _ in 0..<10 {
+            categoryStackView.addArrangedSubview(CategoryListCell())
+        }
+    }
+    
+    fileprivate func setupViews() {
         addSubview(scrollView)
         scrollView.addSubview(categoryStackView)
     }
     
-    func configureConstraints() {
+    fileprivate func configureConstraints() {
         NSLayoutConstraint.activate([
             scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
