@@ -27,14 +27,10 @@ class HomeView: UIView {
         return stackView
     }()
     
-    let labelAdress: UILabel = {
-        let label = UILabel()
-        label.text = "Rua Cicero Pompeio de Toledo, 1"
-        label.textAlignment = .left
-        label.font = UIFont(name: "Arial", size: 14)
-        label.tintColor = .black
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+    let promoListView: PromoListView = {
+        let promoListView = PromoListView()
+        promoListView.translatesAutoresizingMaskIntoConstraints = false
+        return promoListView
     }()
     
     init() {
@@ -47,13 +43,13 @@ class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate func setupViews() {
+    func setupViews() {
         addSubview(scrollView)
         scrollView.addSubview(stackView)
-        stackView.addSubview(labelAdress)
+        stackView.addArrangedSubview(promoListView)
     }
     
-    fileprivate func configureConstraints() {
+    func configureConstraints() {
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
@@ -66,9 +62,6 @@ class HomeView: UIView {
             stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor),
             stackView.heightAnchor.constraint(equalTo: scrollView.heightAnchor),
-            
-            labelAdress.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 20),
-            labelAdress.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 20),
         ])
     }
 }
