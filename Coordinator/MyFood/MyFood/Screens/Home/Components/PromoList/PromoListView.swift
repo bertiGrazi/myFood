@@ -9,12 +9,10 @@ import Foundation
 import UIKit
 
 class PromoListView: UIView {
-    //MARK: - Variable
-    let promoListCell = PromoListCell()
-    
     //MARK: - View
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.backgroundColor = .systemGray5
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         return scrollView
     }()
@@ -24,6 +22,8 @@ class PromoListView: UIView {
         stackView.axis = .horizontal
         stackView.alignment = .firstBaseline
         stackView.distribution = .equalSpacing
+        stackView.spacing = 4
+        stackView.layer.cornerRadius = 8
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -56,13 +56,13 @@ class PromoListView: UIView {
     
     fileprivate func configureConstrains() {
         NSLayoutConstraint.activate([
-            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            promosStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            promosStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            promosStackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor, constant: 0),
+            promosStackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor, constant: 0),
             promosStackView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             promosStackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
         ])
