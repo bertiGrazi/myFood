@@ -6,7 +6,7 @@
 //
 import Foundation
 
-class RestaurantListModel {
+class RestaurantListModel: Codable {
     var nameRestaurant: String
     var categoryRestaurant: String
     
