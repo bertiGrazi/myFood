@@ -267,8 +267,7 @@
 		B1FA5ECD27B93A2400144999 /* MyFoodApi */ = {
 			isa = PBXGroup;
 			children = (
-				B1FA5ED427B93C1300144999 /* Router.swift */,
-				B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */,
+				B1FA5F2927B9912F00144999 /* Services */,
 				B1FA5F0927B97EED00144999 /* Protocol */,
 				B1FA5EDC27B9413700144999 /* Api */,
 				B1FA5ECE27B93A2F00144999 /* Mock */,
@@ -321,6 +320,15 @@
 				B1FA5F1727B9813600144999 /* MyFoodBusinessModel.swift */,
 			);
 			path = Business;
+			sourceTree = "<group>";
+		};
+		B1FA5F2927B9912F00144999 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B1FA5ED427B93C1300144999 /* Router.swift */,
+				B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
