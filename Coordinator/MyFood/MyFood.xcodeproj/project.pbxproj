@@ -25,6 +25,8 @@
 		B1FA5EBB27B9336300144999 /* RestaurantViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EBA27B9336300144999 /* RestaurantViewTableViewCell.swift */; };
 		B1FA5EC527B938E800144999 /* RestaurantListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EC427B938E800144999 /* RestaurantListModel.swift */; };
 		B1FA5ED027B93A5500144999 /* restaurant_list.json in Resources */ = {isa = PBXBuildFile; fileRef = B1FA5ECF27B93A5500144999 /* restaurant_list.json */; };
+		B1FA5ED527B93C1300144999 /* MyFoodRouterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5ED427B93C1300144999 /* MyFoodRouterApi.swift */; };
+		B1FA5EE127B9426600144999 /* MyFoodServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		B1FA5EBA27B9336300144999 /* RestaurantViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewTableViewCell.swift; sourceTree = "<group>"; };
 		B1FA5EC427B938E800144999 /* RestaurantListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListModel.swift; sourceTree = "<group>"; };
 		B1FA5ECF27B93A5500144999 /* restaurant_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurant_list.json; sourceTree = "<group>"; };
+		B1FA5ED427B93C1300144999 /* MyFoodRouterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodRouterApi.swift; sourceTree = "<group>"; };
+		B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 		B1F6983827B58C070034F007 /* MyFood */ = {
 			isa = PBXGroup;
 			children = (
+				B1FA5EC327B938C200144999 /* Models */,
 				B1FA5EC227B938AB00144999 /* Service */,
 				B113D99527B5927900102B99 /* AppDelegate */,
 				B1F6984727B58C080034F007 /* Info.plist */,
@@ -233,7 +238,8 @@
 		B1FA5EC227B938AB00144999 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B1FA5EC327B938C200144999 /* Models */,
+				B1FA5ED427B93C1300144999 /* MyFoodRouterApi.swift */,
+				B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 		B1FA5ECD27B93A2400144999 /* MyFoodApi */ = {
 			isa = PBXGroup;
 			children = (
+				B1FA5EDC27B9413700144999 /* Api */,
 				B1FA5ECE27B93A2F00144999 /* Mock */,
 			);
 			path = MyFoodApi;
@@ -257,9 +264,16 @@
 		B1FA5ECE27B93A2F00144999 /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				B1FA5ECF27B93A5500144999 /* restaurant_list.json */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		B1FA5EDC27B9413700144999 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				B1FA5ECF27B93A5500144999 /* restaurant_list.json */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,12 +409,14 @@
 				B1A38C7D27B683CC00B74BA0 /* PromoListView.swift in Sources */,
 				B113D98427B58D8400102B99 /* Coordinator.swift in Sources */,
 				B113D99B27B5962900102B99 /* HomeView.swift in Sources */,
+				B1FA5EE127B9426600144999 /* MyFoodServiceError.swift in Sources */,
 				B1FA5EBB27B9336300144999 /* RestaurantViewTableViewCell.swift in Sources */,
 				B1F6983E27B58C070034F007 /* HomeViewController.swift in Sources */,
 				B113D98927B58E4000102B99 /* AppCoordinator.swift in Sources */,
 				B1A38C9627B6922F00B74BA0 /* CategoryListCell.swift in Sources */,
 				B1F6983A27B58C070034F007 /* AppDelegate.swift in Sources */,
 				B1F6983C27B58C070034F007 /* SceneDelegate.swift in Sources */,
+				B1FA5ED527B93C1300144999 /* MyFoodRouterApi.swift in Sources */,
 				B1F4BA1427B5DDD80081CF1C /* CategoryListView.swift in Sources */,
 				B113D98E27B58ECF00102B99 /* HomeCoordinator.swift in Sources */,
 				B1A38C8527B688C400B74BA0 /* PromoListCell.swift in Sources */,
