@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigation()
+        view.backgroundColor = .systemGray5
     }
     
     override func loadView() {
