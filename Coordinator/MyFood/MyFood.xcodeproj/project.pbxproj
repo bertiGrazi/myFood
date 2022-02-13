@@ -25,8 +25,13 @@
 		B1FA5EBB27B9336300144999 /* RestaurantViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EBA27B9336300144999 /* RestaurantViewTableViewCell.swift */; };
 		B1FA5EC527B938E800144999 /* RestaurantListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EC427B938E800144999 /* RestaurantListModel.swift */; };
 		B1FA5ED027B93A5500144999 /* restaurant_list.json in Resources */ = {isa = PBXBuildFile; fileRef = B1FA5ECF27B93A5500144999 /* restaurant_list.json */; };
-		B1FA5ED527B93C1300144999 /* MyFoodRouterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5ED427B93C1300144999 /* MyFoodRouterApi.swift */; };
+		B1FA5ED527B93C1300144999 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5ED427B93C1300144999 /* Router.swift */; };
 		B1FA5EE127B9426600144999 /* MyFoodServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */; };
+		B1FA5EEA27B978F700144999 /* MyFoodManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EE927B978F700144999 /* MyFoodManagerProtocol.swift */; };
+		B1FA5EF227B979F500144999 /* MyFoodManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EF127B979F500144999 /* MyFoodManagerService.swift */; };
+		B1FA5EFA27B97EAD00144999 /* MyFoodDeliveryApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5EF927B97EAD00144999 /* MyFoodDeliveryApiService.swift */; };
+		B1FA5F0C27B97F3700144999 /* MyFoodDeliveryApiServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5F0B27B97F3700144999 /* MyFoodDeliveryApiServiceProtocol.swift */; };
+		B1FA5F1827B9813600144999 /* MyFoodBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FA5F1727B9813600144999 /* MyFoodBusinessModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +76,13 @@
 		B1FA5EBA27B9336300144999 /* RestaurantViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewTableViewCell.swift; sourceTree = "<group>"; };
 		B1FA5EC427B938E800144999 /* RestaurantListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListModel.swift; sourceTree = "<group>"; };
 		B1FA5ECF27B93A5500144999 /* restaurant_list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = restaurant_list.json; sourceTree = "<group>"; };
-		B1FA5ED427B93C1300144999 /* MyFoodRouterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodRouterApi.swift; sourceTree = "<group>"; };
+		B1FA5ED427B93C1300144999 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodServiceError.swift; sourceTree = "<group>"; };
+		B1FA5EE927B978F700144999 /* MyFoodManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodManagerProtocol.swift; sourceTree = "<group>"; };
+		B1FA5EF127B979F500144999 /* MyFoodManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodManagerService.swift; sourceTree = "<group>"; };
+		B1FA5EF927B97EAD00144999 /* MyFoodDeliveryApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodDeliveryApiService.swift; sourceTree = "<group>"; };
+		B1FA5F0B27B97F3700144999 /* MyFoodDeliveryApiServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodDeliveryApiServiceProtocol.swift; sourceTree = "<group>"; };
+		B1FA5F1727B9813600144999 /* MyFoodBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFoodBusinessModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +181,7 @@
 		B1F6983827B58C070034F007 /* MyFood */ = {
 			isa = PBXGroup;
 			children = (
+				B1FA5EE827B978D700144999 /* Protocol */,
 				B1FA5EC327B938C200144999 /* Models */,
 				B1FA5EC227B938AB00144999 /* Service */,
 				B113D99527B5927900102B99 /* AppDelegate */,
@@ -238,8 +249,9 @@
 		B1FA5EC227B938AB00144999 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				B1FA5ED427B93C1300144999 /* MyFoodRouterApi.swift */,
-				B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */,
+				B1FA5EF127B979F500144999 /* MyFoodManagerService.swift */,
+				B1FA5F0A27B97F1100144999 /* Protocol */,
+				B1FA5F1327B9811400144999 /* Business */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -255,6 +267,9 @@
 		B1FA5ECD27B93A2400144999 /* MyFoodApi */ = {
 			isa = PBXGroup;
 			children = (
+				B1FA5ED427B93C1300144999 /* Router.swift */,
+				B1FA5EE027B9426600144999 /* MyFoodServiceError.swift */,
+				B1FA5F0927B97EED00144999 /* Protocol */,
 				B1FA5EDC27B9413700144999 /* Api */,
 				B1FA5ECE27B93A2F00144999 /* Mock */,
 			);
@@ -274,6 +289,38 @@
 				B1FA5ECF27B93A5500144999 /* restaurant_list.json */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		B1FA5EE827B978D700144999 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B1FA5F0927B97EED00144999 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B1FA5EE927B978F700144999 /* MyFoodManagerProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B1FA5F0A27B97F1100144999 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B1FA5F0B27B97F3700144999 /* MyFoodDeliveryApiServiceProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		B1FA5F1327B9811400144999 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				B1FA5EF927B97EAD00144999 /* MyFoodDeliveryApiService.swift */,
+				B1FA5F1727B9813600144999 /* MyFoodBusinessModel.swift */,
+			);
+			path = Business;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,16 +454,21 @@
 			files = (
 				B1FA5EC527B938E800144999 /* RestaurantListModel.swift in Sources */,
 				B1A38C7D27B683CC00B74BA0 /* PromoListView.swift in Sources */,
+				B1FA5EFA27B97EAD00144999 /* MyFoodDeliveryApiService.swift in Sources */,
 				B113D98427B58D8400102B99 /* Coordinator.swift in Sources */,
 				B113D99B27B5962900102B99 /* HomeView.swift in Sources */,
 				B1FA5EE127B9426600144999 /* MyFoodServiceError.swift in Sources */,
+				B1FA5EEA27B978F700144999 /* MyFoodManagerProtocol.swift in Sources */,
 				B1FA5EBB27B9336300144999 /* RestaurantViewTableViewCell.swift in Sources */,
 				B1F6983E27B58C070034F007 /* HomeViewController.swift in Sources */,
+				B1FA5F1827B9813600144999 /* MyFoodBusinessModel.swift in Sources */,
 				B113D98927B58E4000102B99 /* AppCoordinator.swift in Sources */,
 				B1A38C9627B6922F00B74BA0 /* CategoryListCell.swift in Sources */,
 				B1F6983A27B58C070034F007 /* AppDelegate.swift in Sources */,
+				B1FA5F0C27B97F3700144999 /* MyFoodDeliveryApiServiceProtocol.swift in Sources */,
+				B1FA5EF227B979F500144999 /* MyFoodManagerService.swift in Sources */,
 				B1F6983C27B58C070034F007 /* SceneDelegate.swift in Sources */,
-				B1FA5ED527B93C1300144999 /* MyFoodRouterApi.swift in Sources */,
+				B1FA5ED527B93C1300144999 /* Router.swift in Sources */,
 				B1F4BA1427B5DDD80081CF1C /* CategoryListView.swift in Sources */,
 				B113D98E27B58ECF00102B99 /* HomeCoordinator.swift in Sources */,
 				B1A38C8527B688C400B74BA0 /* PromoListCell.swift in Sources */,
