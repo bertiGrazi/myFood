@@ -8,7 +8,7 @@
 import UIKit
 
 class HomeView: UIView {
-    
+    //MARK: - Views
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .systemGray5
@@ -39,6 +39,12 @@ class HomeView: UIView {
         return categoryListView
     }()
     
+    let restaurantListView: RestaurantView = {
+        let restaurantListView = RestaurantView()
+        restaurantListView.translatesAutoresizingMaskIntoConstraints = false
+        return restaurantListView
+    }()
+    
     init() {
         super.init(frame: .zero)
         setupViews()
@@ -54,6 +60,7 @@ class HomeView: UIView {
         scrollView.addSubview(stackView)
         stackView.addArrangedSubview(promoListView)
         stackView.addArrangedSubview(categoryListView)
+        stackView.addArrangedSubview(restaurantListView)
     }
     
     func configureConstraints() {
