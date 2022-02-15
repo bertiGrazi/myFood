@@ -23,7 +23,7 @@ class RestaurantViewTableViewCell: UITableViewCell {
     
     let nameRestaurantLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.numberOfLines = 1
         label.textColor = .black
         label.font = UIFont.boldSystemFont(ofSize: 14)
@@ -33,7 +33,7 @@ class RestaurantViewTableViewCell: UITableViewCell {
     
     let categoryRestaurantLabel: UILabel = {
         let label = UILabel()
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.numberOfLines = 1
         label.textColor = .systemGreen
         label.font = UIFont.boldSystemFont(ofSize: 10)
@@ -63,6 +63,12 @@ class RestaurantViewTableViewCell: UITableViewCell {
             restaurantStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
             restaurantStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
             restaurantStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            nameRestaurantLabel.topAnchor.constraint(equalTo: restaurantStackView.topAnchor, constant: 8),
+            nameRestaurantLabel.leadingAnchor.constraint(equalTo: restaurantStackView.leadingAnchor, constant: 8),
+            
+            categoryRestaurantLabel.leadingAnchor.constraint(equalTo: restaurantStackView.leadingAnchor, constant: 8),
+            categoryRestaurantLabel.topAnchor.constraint(equalTo: nameRestaurantLabel.bottomAnchor, constant: 4),
         ])
     }
     
